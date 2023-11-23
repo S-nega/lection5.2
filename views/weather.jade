@@ -1,5 +1,20 @@
-p hello 
+extends layout
 
-p #{data.weather}
-p #{weather}
-p #{city}
+block content
+
+    a(href="/api/search") to search 
+    br
+    h1 Weather in #{data.name}
+
+    p description: 
+        each m in data.weather
+            !{m.description}    
+    br
+    p temperature: !{data.main.temp}
+    p feels like: !{data.main.feels_like}
+    br
+    p wind speed: !{data.wind.speed}
+    p wind degree: !{data.wind.deg}
+
+
+

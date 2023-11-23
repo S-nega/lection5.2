@@ -1,0 +1,9 @@
+extends layout
+
+block content
+
+    p Enter name of the city 
+    form(action="/api/search", method="post")
+        input(type="hidden" name="name" value="#{name}" visibility="hidden" )
+        input(type="text" name="city" value="")
+        input(type="submit" value="find") 
